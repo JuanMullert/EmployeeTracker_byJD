@@ -9,5 +9,27 @@ const db = mysql.createConnection(
       password: 'codingLad',
       database:'employees_db'
     },
-    console.log('Connected to the employees_db database')
+    console.log('Connected to the tracker_db database')
 );
+
+// first prompt questions
+function firstPrompt() {
+  inquirer
+    .prompt([
+        {
+            type: 'list',
+            message: 'What would you like to do?',
+            name: 'menuInput',
+            choices: [
+              'View all departments',
+              'View all roles',
+              'View all employees',
+              'Add a department',
+              'Add a role',
+              'Add an employee',
+              'Update an employee role', 
+              'Quit'
+            ]
+        }
+    ])
+    
