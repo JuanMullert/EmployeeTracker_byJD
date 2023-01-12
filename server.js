@@ -9,7 +9,7 @@ const db = mysql.createConnection(
       password: 'codingLad',
       database:'employees_db'
     },
-    console.log('Connected to the employees_db database')
+    console.log('Connected to the employees_db database!')
 );
 
 // first prompt questions
