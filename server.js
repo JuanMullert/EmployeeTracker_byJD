@@ -9,7 +9,7 @@ const db = mysql.createConnection(
       password: 'codingLad',
       database:'employees_db'
     },
-    console.log('Connected to the tracker_db database')
+    console.log('Connected to the employees_db database!')
 );
 
 // first prompt questions
@@ -33,3 +33,27 @@ function firstPrompt() {
         }
     ])
     
+    .then((answers) => {
+        if (answers.menuInput === 'View all departments') {
+          viewDepartments();
+        }
+        else if (answers.menuInput === 'View all roles') {
+          viewRoles();
+        }
+        else if (answers.menuInput === 'View all employees') {
+          viewEmployees();
+        }
+        else if (answers.menuInput === 'Add a department') {
+          addDepartment();
+        }
+        else if (answers.menuInput === 'Add a role') {
+          addRole();
+        }
+        else if (answers.menuInput === 'Add an employee') {
+          addEmployee();
+        }
+        else if (answers.menuInput === 'Update an employee role') {
+          updateEmployeeRole();
+        }
+      })
+  };
