@@ -4,7 +4,9 @@ VALUES ("Sales"),
        ("Legal"),
        ("Engineering");
 
-INSERT INTO role (title, salary, department_id)
+       
+
+INSERT INTO roles (title, salary, department_id)
 VALUES ("Sales Lead", 90000, 1),
        ("Salesperson", 70000, 1),
        ("Trainer", 65000, 2),
@@ -23,3 +25,5 @@ VALUES ("Kenny", "Singh", 1, NULL),
        ("Emanuel", "Suarez", 3, 3),
        ("Taylor", "Raymond", 4, NULL),
        ("Marissa", "Peters", 4, 4);
+
+       
