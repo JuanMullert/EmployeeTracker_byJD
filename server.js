@@ -212,4 +212,31 @@ function viewDepartments() {
       })
   }
   
-  
+  function updateEmployeeRole() {
+    const employee = () => db.promise().query('SELECT * FROM employee')
+      .then((rows) => {
+          let employeeNames = rows[0].map(obj => obj.first_name);
+          return employeeNames;
+    })
+    const role = () => db.promise().query('SELECT * FROM roles')
+      .then((rows) => {
+          let roleNames = rows[0].map(obj => obj.title);
+          return roleNames;
+    })
+    inquirer
+      .prompt([
+        {
+          type: 'list',
+          message: `Which employee's role do you want to update?`,
+          name: 'updateEmployeeName',
+          choices: employee
+        },
+        {
+          type: 'list',
+          message: 'What role do you want to assign to the selected employee?',
+          name: 'updateEmployeeRole',
+          choices: role
+        }
+      ])
+      .then
+  }
